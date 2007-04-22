@@ -16,6 +16,7 @@ Obsoletes:  youri
 Buildrequires:	perl-devel
 %endif
 Buildrequires:	perl-version
+Buildrequires:	perl(Youri::Package::RPM::Test)
 Buildarch:	    noarch
 BuildRoot:	    %{_tmppath}/%{name}-%{version}
 

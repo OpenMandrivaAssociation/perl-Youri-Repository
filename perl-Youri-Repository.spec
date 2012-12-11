@@ -1,25 +1,18 @@
 %define module	Youri-Repository
-%define name	perl-%{module}
-%define version 0.1.0
-%define release %mkrel 5
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		perl-%{module}
+Version:	0.1.0
+Release:	6
 Summary:	Packages repository abstraction layer
 License:	GPL or Artistic
 Group:		Development/Other
 Source:		http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
 Url:		http://youri.zarb.org
-Obsoletes:  youri
-%if %{mdkversion} < 1010
-Buildrequires:	perl-devel
-%endif
-Buildrequires:	perl(Youri::Package::RPM::Test)
-Buildrequires:	perl-version
-Requires:       perl-version
-Buildarch:	    noarch
-BuildRoot:	    %{_tmppath}/%{name}-%{version}
+BuildRequires:	perl-devel
+BuildRequires:	perl(Youri::Package::RPM::Test)
+BuildRequires:	perl(version)
+Requires:       perl(version)
+BuildArch:	noarch
 
 %description
 YOURI stands for "Youri Offers an Upload & Repository Infrastucture". It aims
@@ -31,21 +24,49 @@ This class provides an uniform view over various kind of packages repository.
 %setup -q -n %{module}-v%{version}
 
 %build
-%{__perl} Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-%__make test
+make test
 
 %install
-rm -rf %{buildroot}
 %makeinstall_std
 
-%clean 
-rm -rf %{buildroot}
-
 %files 
-%defattr(-,root,root)
 %doc ChangeLog README
 %{perl_vendorlib}/Youri
 %{_mandir}/man3/*
+
+
+%changelog
+* Fri Sep 04 2009 Thierry Vignaud <tvignaud@mandriva.com> 0.1.0-5mdv2010.0
++ Revision: 430676
+- rebuild
+
+* Fri Aug 08 2008 Thierry Vignaud <tvignaud@mandriva.com> 0.1.0-4mdv2009.0
++ Revision: 268888
+- rebuild early 2009.0 package (before pixel changes)
+
+* Sat May 24 2008 Guillaume Rousse <guillomovitch@mandriva.org> 0.1.0-3mdv2009.0
++ Revision: 210952
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tvignaud@mandriva.com>
+    - kill re-definition of %%buildroot on Pixel's request
+
+* Mon Apr 23 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.1.0-2mdv2008.0
++ Revision: 17202
+- force dependency on perl-version
+
+* Sun Apr 22 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.1.0-1mdv2008.0
++ Revision: 17079
+- Import perl-Youri-Repository
+
+
+
+* Sun Apr 22 2007 Guillaume Rousse <guillomovitch@mandriva.org> 0.1.0-1mdv2008.0
+- first mdv release 

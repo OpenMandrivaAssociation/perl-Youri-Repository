@@ -1,18 +1,18 @@
 %define module	Youri-Repository
 
 Name:		perl-%{module}
-Version:	0.1.0
-Release:	6
+Version:	0.1.1
+Release:	1
 Summary:	Packages repository abstraction layer
 License:	GPL or Artistic
 Group:		Development/Other
-Source:		http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
+Source0:	http://youri.zarb.or/download/%{module}-v%{version}.tar.bz2
 Url:		http://youri.zarb.org
 BuildRequires:	perl-devel
 BuildRequires:	perl(Youri::Package::RPM::Test)
 BuildRequires:	perl(version)
-Requires:       perl(version)
-BuildArch:	noarch
+Requires:		perl(version)
+BuildArch:		noarch
 
 %description
 YOURI stands for "Youri Offers an Upload & Repository Infrastucture". It aims

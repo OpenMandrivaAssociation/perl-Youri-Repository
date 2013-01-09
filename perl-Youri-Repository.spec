@@ -21,7 +21,7 @@ to build tools making management of a coherent set of packages easier.
 This class provides an uniform view over various kind of packages repository.
 
 %prep
-%setup -q -n %{module}-v%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor

@@ -11,6 +11,7 @@ Url:		http://youri.zarb.org
 BuildRequires:	perl-devel
 BuildRequires:	perl(Youri::Package::RPM::Test)
 BuildRequires:	perl(version)
+BuildRequires:	perl-JSON-PP
 Requires:		perl(version)
 BuildArch:		noarch
 

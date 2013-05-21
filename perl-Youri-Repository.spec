@@ -2,7 +2,7 @@
 
 Name:		perl-%{module}
 Version:	0.1.1
-Release:	2
+Release:	3
 Summary:	Packages repository abstraction layer
 License:	GPL or Artistic
 Group:		Development/Other

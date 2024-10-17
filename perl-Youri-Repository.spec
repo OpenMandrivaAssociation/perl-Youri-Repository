@@ -7,7 +7,7 @@ Summary:	Packages repository abstraction layer
 License:	GPL or Artistic
 Group:		Development/Other
 Source0:	http://youri.zarb.org/download/%{module}-%{version}.tar.gz
-Url:		http://youri.zarb.org
+Url:		https://youri.zarb.org
 BuildRequires:	perl-devel
 BuildRequires:	perl(Youri::Package::RPM::Test)
 BuildRequires:	perl(version)

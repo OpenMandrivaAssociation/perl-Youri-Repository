@@ -8,6 +8,7 @@ License:	GPL or Artistic
 Group:		Development/Other
 Source0:	http://youri.zarb.org/download/%{module}-%{version}.tar.gz
 Url:		https://youri.zarb.org
+BuildRequires:	make
 BuildRequires:	perl-devel
 BuildRequires:	perl(Youri::Package::RPM::Test)
 BuildRequires:	perl(version)
